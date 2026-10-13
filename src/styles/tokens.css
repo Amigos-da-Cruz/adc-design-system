@@ -1,0 +1,18 @@
+/* GERADO por scripts/build-tokens.mjs — não editar à mão. */
+:root,[data-theme="claro"]{--surface:#FFFFFF;--surface-raised:#FBF9F4;--surface-sunken:#F3EEE2;--ink:#2A1F1A;--ink-muted:#5C4A3E;--brand:#8B1A2E;--brand-strong:#6E1424;--on-brand:#F5EDD6;--ornament:#B8960C;--accent-text:#725B06;--line:#DDD2B3;--line-strong:#7D6F4D;--focus:var(--brand);--azul-mariano:#2B4B7E;}
+[data-theme="mariano"]{--surface:#FFFFFF;--surface-raised:#F7F9FC;--surface-sunken:#E8EEF6;--ink:#14233B;--ink-muted:#3F5675;--brand:#2B4B7E;--brand-strong:#1F3963;--on-brand:#F5F8FC;--ornament:#9AA8BC;--accent-text:#2B4B7E;--line:#D3DDEA;--line-strong:#5F7391;--focus:var(--brand);--azul-mariano:#2B4B7E;}
+:root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--radius-0:0;--radius-sm:2px;--radius-md:4px;--radius-lg:8px;--shadow-raised:0 1px 2px #2a1f1a26;--measure-text:66ch;--measure-wide:880px;--measure-page:1120px;--font-display:"Playfair Display", Georgia, serif;--font-text:"Libre Baskerville", Baskerville, Georgia, serif;--font-support:Jost, "Helvetica Neue", Arial, sans-serif;--font-inscription:Cinzel, "Trajan Pro", Georgia, serif;}
+.display-xl{font-family:var(--font-display);font-size:56px;line-height:60px;font-weight:700;letter-spacing:-0.01em;}
+.display-lg{font-family:var(--font-display);font-size:40px;line-height:46px;font-weight:700;}
+.display-md{font-family:var(--font-display);font-size:28px;line-height:34px;font-weight:700;}
+.citacao{font-family:var(--font-display);font-size:26px;line-height:36px;font-weight:500;font-style:italic;}
+.lede{font-family:var(--font-text);font-size:20px;line-height:32px;font-weight:400;font-style:italic;}
+.body-lg{font-family:var(--font-text);font-size:18px;line-height:30px;font-weight:400;}
+.body{font-family:var(--font-text);font-size:16px;line-height:27px;font-weight:400;}
+.body-sm{font-family:var(--font-text);font-size:14px;line-height:23px;font-weight:400;}
+.rubrica{font-family:var(--font-text);font-size:14px;line-height:22px;font-weight:400;font-style:italic;}
+.label{font-family:var(--font-support);font-size:13px;line-height:18px;font-weight:600;letter-spacing:0.08em;}
+.button{font-family:var(--font-support);font-size:15px;line-height:20px;font-weight:500;letter-spacing:0.02em;}
+.caption{font-family:var(--font-support);font-size:13px;line-height:19px;font-weight:400;}
+.eyebrow{font-family:var(--font-inscription);font-size:12px;line-height:16px;font-weight:600;letter-spacing:0.16em;}
+.inscricao{font-family:var(--font-inscription);font-size:20px;line-height:28px;font-weight:500;letter-spacing:0.06em;}

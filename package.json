@@ -1,0 +1,34 @@
+{
+  "name": "adc-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Design system dos Amigos da Cruz: tokens, componentes React e Storybook.",
+  "type": "module",
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "dev": "npm run tokens && storybook dev -p 6006",
+    "build": "npm run tokens && tsc --noEmit && vite build",
+    "build-storybook": "npm run tokens && storybook build",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fontsource/cinzel": "^5.3.0",
+    "@fontsource/jost": "^5.3.0",
+    "@fontsource/libre-baskerville": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.2",
+    "@storybook/addon-docs": "^10.6.2",
+    "@storybook/react-vite": "^10.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "storybook": "^10.6.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

@@ -1,0 +1,85 @@
+
+/* Raiz: pôr em qualquer contentor que use o sistema. Tudo o resto vem com prefixo adc-. */
+.adc { background: var(--surface); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 27px; }
+.adc *, .adc *::before, .adc *::after { box-sizing: border-box; }
+.adc :where(a) { color: var(--brand); text-underline-offset: 4px; }
+.adc :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* Botão */
+.adc-btn { display: inline-flex; align-items: center; gap: var(--space-2); padding: 12px 22px; border: 1px solid transparent; border-radius: var(--radius-sm); font: 500 15px/20px var(--font-support); letter-spacing: 0.02em; text-decoration: none; cursor: pointer; }
+.adc-btn--primary { background: var(--brand); color: var(--on-brand); }
+.adc-btn--primary:hover { background: var(--brand-strong); }
+.adc-btn--secondary { background: transparent; color: var(--brand); border-color: var(--brand); }
+.adc-btn--secondary:hover { background: var(--surface-sunken); }
+.adc-btn--text { padding: 0; border: 0; background: none; color: var(--brand); text-decoration: underline; text-underline-offset: 4px; }
+.adc-btn--text:hover { color: var(--brand-strong); }
+.adc-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+/* Eyebrow e divisor */
+.adc-eyebrow { font: 600 12px/16px var(--font-inscription); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-text); }
+.adc-divider { display: flex; align-items: center; gap: var(--space-3); color: var(--ornament); }
+.adc-divider::before, .adc-divider::after { content: ""; flex: 1; height: 1px; background: var(--ornament); }
+.adc-divider i { width: 8px; height: 8px; background: var(--ornament); transform: rotate(45deg); }
+
+/* Etiqueta: o tipo distingue-se pela forma, não só pela cor */
+.adc-tag { display: inline-block; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); font: 600 12px/16px var(--font-support); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: transparent; }
+.adc-tag--noticia { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+.adc-tag--comentario { border-color: var(--brand); color: var(--brand); }
+.adc-tag--documentado { background: var(--surface-raised); border-color: var(--ink); color: var(--ink); }
+.adc-tag--tradicao { border-style: dashed; color: var(--accent-text); font-style: italic; }
+
+/* Cabeçalho de artigo */
+.adc-article-head { max-width: var(--measure-wide); margin: 0 auto; padding: var(--space-7) var(--space-5) var(--space-6); }
+.adc-article-head__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+.adc-article-head__title { margin: 0 0 var(--space-4); font-family: var(--font-display); font-weight: 700; font-size: 56px; line-height: 60px; letter-spacing: -0.01em; }
+.adc-article-head__lede { margin: 0 0 var(--space-5); max-width: var(--measure-text); font-style: italic; font-size: 20px; line-height: 32px; }
+.adc-article-head__by { margin: 0; padding-top: var(--space-4); border-top: 1px solid var(--line); font: 400 13px/19px var(--font-support); color: var(--ink-muted); }
+
+/* Texto de artigo */
+.adc-prose { max-width: var(--measure-text); margin: 0 auto; font-size: 18px; line-height: 30px; }
+.adc-prose p { margin: 0 0 var(--space-5); }
+.adc-prose h2 { margin: var(--space-7) 0 var(--space-4); font: 700 28px/34px var(--font-display); }
+.adc-prose blockquote { margin: var(--space-7) 0; padding: var(--space-5) 0; text-align: center; border-top: 1px solid var(--ornament); border-bottom: 1px solid var(--ornament); font: italic 500 26px/36px var(--font-display); }
+.adc-prose blockquote cite { display: block; margin-top: var(--space-3); font: 400 13px/19px var(--font-support); font-style: normal; color: var(--ink-muted); }
+
+/* Caixa de fontes */
+.adc-sources { max-width: var(--measure-text); margin: var(--space-7) auto 0; padding: var(--space-5); background: var(--surface-sunken); border-top: 2px solid var(--ink); border-radius: 0 0 var(--radius-md) var(--radius-md); }
+.adc-sources ol { margin: var(--space-3) 0 0; padding-left: var(--space-5); font-size: 14px; line-height: 23px; }
+.adc-sources li + li { margin-top: var(--space-2); }
+
+/* Cartão de artigo */
+.adc-card { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-5); background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--ink); text-decoration: none; }
+.adc-card:hover { border-color: var(--brand); }
+.adc-card__title { margin: 0; font: 700 28px/34px var(--font-display); }
+.adc-card__excerpt { margin: 0; font-size: 14px; line-height: 23px; color: var(--ink-muted); }
+.adc-card__foot { margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--line); font: 400 13px/19px var(--font-support); color: var(--ink-muted); }
+
+/* Ficha de livro */
+.adc-book { display: grid; grid-template-columns: 140px 1fr; gap: var(--space-5); align-items: start; max-width: 440px; padding: var(--space-5); background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.adc-book__cover { position: relative; display: grid; place-items: center; aspect-ratio: 2 / 3; background: var(--brand); box-shadow: var(--shadow-raised); }
+.adc-book__cover::after { content: ""; position: absolute; inset: 8px; border: 1px solid var(--ornament); pointer-events: none; }
+.adc-book__cover img { width: 46%; height: auto; }
+.adc-book__title { margin: var(--space-2) 0 var(--space-2); font: 700 28px/34px var(--font-display); }
+.adc-book__sub { margin: 0 0 var(--space-3); font-style: italic; font-size: 14px; line-height: 23px; color: var(--ink-muted); }
+.adc-book__credit { margin: 0 0 var(--space-4); font: 400 13px/19px var(--font-support); color: var(--ink-muted); }
+
+/* Rubrica, versículo e versal */
+.adc-rubric { font-style: italic; font-size: 14px; line-height: 22px; color: var(--brand); }
+.adc-verse { margin: 0 0 var(--space-2); }
+.adc-verse b { font-weight: 400; color: var(--brand); margin-right: var(--space-2); }
+.adc-versal::first-letter { float: left; margin: 0.06em 0.1em 0 0; font-family: var(--font-display); font-weight: 700; font-size: 4.2em; line-height: 0.8; color: var(--brand); }
+
+/* Slide de carrossel, 4:5, mostrado a 50% (540 x 675; exportar a 1080 x 1350) */
+.adc-slide { position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 540px; height: 675px; padding: var(--space-7); overflow: hidden; background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.adc-slide::after { content: ""; position: absolute; inset: 16px; border: 1px solid var(--ornament); pointer-events: none; }
+.adc-slide__title { margin: var(--space-3) 0 0; font: 700 44px/48px var(--font-display); }
+.adc-slide__body { margin: 0; font-size: 17px; line-height: 27px; }
+.adc-slide__foot { display: flex; align-items: center; justify-content: space-between; font: 400 13px/18px var(--font-support); }
+.adc-slide__foot img { width: 28px; height: auto; }
+.adc-slide--capa { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+.adc-slide--capa .adc-eyebrow { color: var(--on-brand); }
+.adc-slide--capa > div:first-child { margin-block: auto; }
+.adc-slide--capa .adc-slide__title { font-size: 52px; line-height: 56px; }
+
+/* Logótipo */
+.adc-logo { display: block; height: auto; }
