@@ -18,10 +18,10 @@ Requer Node 22+.
 ```
 tokens/tokens.json        fonte única de verdade (cores, tipo, espaço, forma)
 scripts/build-tokens.mjs  gera src/styles/tokens.css a partir dos tokens
-src/styles/               tokens.css (gerado), components.css, fonts.ts
+src/styles/               tokens.css (gerado), components.css, index.css (inclui fontes)
 src/components/           um componente + stories por pasta
 docs/                     BRAND.md (livro de marca) e páginas MDX do Storybook
-.github/workflows/        CI e publicação do Storybook no GitHub Pages
+.github/workflows/        CI, publicação do pacote e Storybook no GitHub Pages
 ```
 
 ## Regras
@@ -33,15 +33,37 @@ docs/                     BRAND.md (livro de marca) e páginas MDX do Storybook
 
 ## Usar noutro projecto
 
+O pacote está no GitHub Packages, sob o âmbito `@amigos-da-cruz`. No projecto consumidor, acrescentar uma `.npmrc` sem credenciais:
+
+```ini
+@amigos-da-cruz:registry=https://npm.pkg.github.com
+```
+
+Para instalar localmente, autenticar com um personal access token **classic** com `read:packages` e acesso ao pacote:
+
+```bash
+npm login --scope=@amigos-da-cruz --auth-type=legacy --registry=https://npm.pkg.github.com
+npm install @amigos-da-cruz/adc-design-system
+```
+
+Em GitHub Actions, dar ao repositório consumidor acesso **Read** em *Package settings → Manage Actions access*. O workflow consumidor pode então usar `actions/setup-node` com `registry-url: https://npm.pkg.github.com`, `permissions: { contents: read, packages: read }` e `NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}` no passo `npm ci`.
+
 ```tsx
-import './fonts'; // reexporta os @fontsource usados, ver src/styles/fonts.ts
-import { Adc, Button } from 'adc-design-system';
-import 'adc-design-system/style.css';
+import { Adc, Button } from '@amigos-da-cruz/adc-design-system';
+import '@amigos-da-cruz/adc-design-system/style.css';
 
 <Adc tema="claro"><Button href="/obras">Ver obras</Button></Adc>
 ```
 
-As fontes não vão dentro da biblioteca: instalar os pacotes `@fontsource/*` e importá-los na aplicação.
+O CSS publicado inclui as fontes e os dois temas. A aplicação deve usar React 19 e importar o CSS uma vez na sua entrada.
+
+## Publicar o pacote
+
+1. Alterar a versão em `package.json` e `package-lock.json` (por exemplo, `npm version patch --no-git-tag-version`).
+2. Fazer commit, criar a tag `v<versão>` (por exemplo, `v0.1.0`) e enviá-la para o GitHub. O workflow `publish-package.yml` valida a tag, compila o pacote e publica-o em GitHub Packages com `GITHUB_TOKEN`.
+3. Na primeira publicação, confirmar nas definições do pacote a visibilidade pretendida e conceder acesso de leitura aos repositórios consumidores.
+
+O registo aceita apenas versões novas. Não reutilizar uma tag ou versão já publicada.
 
 ## Publicar o Storybook
 
@@ -51,4 +73,4 @@ Em *Settings → Pages* escolher *GitHub Actions* como origem. Cada push para `m
 
 - O logótipo é uma vectorização do PNG fornecido. Substituir por vector original quando existir.
 - O Figma e o Artifact do Claude Design são cópias deste sistema: alterações aqui **não** se propagam automaticamente.
-- Pacote não publicado em npm (`private: true`) e sem `.d.ts` gerados; falta `vite-plugin-dts` para o consumir como dependência.
+- O pacote só fica disponível após o primeiro envio de uma tag de versão e a conclusão do workflow de publicação.

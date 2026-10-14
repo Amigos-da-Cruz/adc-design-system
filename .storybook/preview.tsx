@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/react-vite';
-import '../src/styles/fonts';
 import '../src/styles/index.css';
 import { Adc } from '../src/components/Adc/Adc';
 
