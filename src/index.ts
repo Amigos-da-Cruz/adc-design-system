@@ -11,3 +11,4 @@ export { SourceBox, type SourceBoxProps } from './components/SourceBox/SourceBox
 export { BookCard, type BookCardProps } from './components/BookCard/BookCard';
 export { Rubric, Verse, Versal } from './components/Rubric/Rubric';
 export { Slide, type SlideProps } from './components/Slide/Slide';
+export { CommentSection, type CommentSectionProps, type ReaderComment } from './components/Comments/CommentSection';

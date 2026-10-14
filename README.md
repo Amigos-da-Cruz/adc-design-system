@@ -57,6 +57,10 @@ import '@amigos-da-cruz/adc-design-system/style.css';
 
 O CSS publicado inclui as fontes e os dois temas. A aplicação deve usar React 19 e importar o CSS uma vez na sua entrada.
 
+### Comentários de leitores
+
+`CommentSection` apresenta comentários em conversa, respostas e o formulário de nome e mensagem. Recebe os dados e uma função `onSubmit` da aplicação. A aplicação consumidora fornece a API, autenticação, proteção contra spam e base de dados; nenhuma credencial ou ligação a serviços entra no design system. A story **Blogue/Comentários de leitores** mostra a interface.
+
 ## Publicar o pacote
 
 1. Alterar a versão em `package.json` e `package-lock.json` (por exemplo, `npm version patch --no-git-tag-version`).

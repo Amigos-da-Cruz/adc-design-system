@@ -1,6 +1,6 @@
 {
   "name": "@amigos-da-cruz/adc-design-system",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Design system dos Amigos da Cruz: tokens, componentes React e Storybook.",
   "type": "module",
   "repository": {
