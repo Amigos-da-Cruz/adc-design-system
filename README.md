@@ -73,4 +73,3 @@ Em *Settings → Pages* escolher *GitHub Actions* como origem. Cada push para `m
 
 - O logótipo é uma vectorização do PNG fornecido. Substituir por vector original quando existir.
 - O Figma e o Artifact do Claude Design são cópias deste sistema: alterações aqui **não** se propagam automaticamente.
-- O pacote só fica disponível após o primeiro envio de uma tag de versão e a conclusão do workflow de publicação.
